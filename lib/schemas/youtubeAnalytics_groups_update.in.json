@@ -1,0 +1,161 @@
+{
+    "type": "object",
+    "properties": {
+        "onBehalfOfContentOwner": {
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A group.",
+            "properties": {
+                "contentDetails": {
+                    "description": "The `contentDetails` object contains additional information about the\ngroup, such as the number and type of items that it contains.",
+                    "properties": {
+                        "itemCount": {
+                            "description": "The number of items in the group.",
+                            "format": "uint64",
+                            "type": "string"
+                        },
+                        "itemType": {
+                            "description": "The type of resources that the group contains.\n\nValid values for this property are:\n * `youtube#channel`\n * `youtube#playlist`\n * `youtube#video`\n * `youtubePartner#asset`",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "errors": {
+                    "description": "Apiary error details",
+                    "properties": {
+                        "code": {
+                            "description": "Global error code. Deprecated and ignored.\nSet custom error codes in ErrorProto.domain and ErrorProto.code\ninstead.",
+                            "enum": [
+                                "BAD_REQUEST",
+                                "FORBIDDEN",
+                                "NOT_FOUND",
+                                "CONFLICT",
+                                "GONE",
+                                "PRECONDITION_FAILED",
+                                "INTERNAL_ERROR",
+                                "SERVICE_UNAVAILABLE"
+                            ],
+                            "type": "string"
+                        },
+                        "error": {
+                            "description": "Specific error description and codes",
+                            "items": {
+                                "description": "Describes one specific error.",
+                                "properties": {
+                                    "argument": {
+                                        "description": "Error arguments, to be used when building user-friendly error messages\ngiven the error domain and code.  Different error codes require different\narguments.",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "code": {
+                                        "description": "Error code in the error domain. This should correspond to\na value of the enum type whose name is in domain. See\nthe core error domain in error_domain.proto.",
+                                        "type": "string"
+                                    },
+                                    "debugInfo": {
+                                        "description": "Debugging information, which should not be\nshared externally.",
+                                        "type": "string"
+                                    },
+                                    "domain": {
+                                        "description": "Error domain. RoSy services can define their own\ndomain and error codes. This should normally be\nthe name of an enum type, such as: gdata.CoreErrorDomain",
+                                        "type": "string"
+                                    },
+                                    "externalErrorMessage": {
+                                        "description": "A short explanation for the error, which can be shared outside Google.\n\nPlease set domain, code and arguments whenever possible instead of this\nerror message so that external APIs can build safe error messages\nthemselves.\n\nExternal messages built in a RoSy interface will most likely refer to\ninformation and concepts that are not available externally and should not\nbe exposed. It is safer if external APIs can understand the errors and\ndecide what the error message should look like.",
+                                        "type": "string"
+                                    },
+                                    "location": {
+                                        "description": "Location of the error, as specified by the location type.\n\nIf location_type is PATH, this should be a path to a field that's\nrelative to the request, using FieldPath notation\n(net/proto2/util/public/field_path.h).\n\nExamples:\n  authenticated_user.gaia_id\n  resource.address[2].country",
+                                        "type": "string"
+                                    },
+                                    "locationType": {
+                                        "enum": [
+                                            "PATH",
+                                            "OTHER"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "requestId": {
+                            "description": "Request identifier generated by the service, which can be\nused to identify the error in the logs",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "etag": {
+                    "description": "The Etag of this resource.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The ID that YouTube uses to uniquely identify the group.",
+                    "type": "string"
+                },
+                "kind": {
+                    "description": "Identifies the API resource's type. The value will be `youtube#group`.",
+                    "type": "string"
+                },
+                "snippet": {
+                    "description": "The `snippet` object contains basic information about the group, including\nits creation date and name.",
+                    "properties": {
+                        "publishedAt": {
+                            "description": "The date and time that the group was created. The value is specified in\nISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.",
+                            "format": "google-datetime",
+                            "type": "string"
+                        },
+                        "title": {
+                            "description": "The group name. The value must be a non-empty string.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

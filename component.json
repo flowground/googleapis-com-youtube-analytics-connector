@@ -1,0 +1,186 @@
+{
+    "title": "YouTube Analytics",
+    "description": "Retrieves your YouTube Analytics data.",
+    "docsUrl": "https://developers.google.com/youtube/analytics",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/youtubeAnalytics/v2/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://youtubeanalytics.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "youtubeAnalytics_groupItems_delete": {
+            "main": "./lib/actions/youtubeAnalytics_groupItems_delete.js",
+            "title": "Removes an item from a group.",
+            "description": "Removes an item from a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groupItems_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groupItems_list": {
+            "main": "./lib/actions/youtubeAnalytics_groupItems_list.js",
+            "title": "Returns a collection of group items that match the API request parameters.",
+            "description": "Returns a collection of group items that match the API request parameters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groupItems_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groupItems_insert": {
+            "main": "./lib/actions/youtubeAnalytics_groupItems_insert.js",
+            "title": "Creates a group item.",
+            "description": "Creates a group item.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groupItems_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groups_delete": {
+            "main": "./lib/actions/youtubeAnalytics_groups_delete.js",
+            "title": "Deletes a group.",
+            "description": "Deletes a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groups_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groups_list": {
+            "main": "./lib/actions/youtubeAnalytics_groups_list.js",
+            "title": "Returns a collection of groups that match the API request parameters. For\nexample, you can retrieve all groups that the authenticated user owns,\nor you can retrieve one or more groups by their unique IDs.",
+            "description": "Returns a collection of groups that match the API request parameters. For\nexample, you can retrieve all groups that the authenticated user owns,\nor you can retrieve one or more groups by their unique IDs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groups_insert": {
+            "main": "./lib/actions/youtubeAnalytics_groups_insert.js",
+            "title": "Creates a group.",
+            "description": "Creates a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groups_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_groups_update": {
+            "main": "./lib/actions/youtubeAnalytics_groups_update.js",
+            "title": "Modifies a group. For example, you could change a group's title.",
+            "description": "Modifies a group. For example, you could change a group's title.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_groups_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "youtubeAnalytics_reports_query": {
+            "main": "./lib/actions/youtubeAnalytics_reports_query.js",
+            "title": "Retrieve your YouTube Analytics reports.",
+            "description": "Retrieve your YouTube Analytics reports.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/youtubeAnalytics_reports_query.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

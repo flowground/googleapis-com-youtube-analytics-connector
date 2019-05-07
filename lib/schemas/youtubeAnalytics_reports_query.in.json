@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "currency": {
+            "type": "string"
+        },
+        "dimensions": {
+            "type": "string"
+        },
+        "endDate": {
+            "type": "string"
+        },
+        "filters": {
+            "type": "string"
+        },
+        "ids": {
+            "type": "string"
+        },
+        "includeHistoricalChannelData": {
+            "type": "boolean"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "metrics": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "string"
+        },
+        "startDate": {
+            "type": "string"
+        },
+        "startIndex": {
+            "type": "integer"
+        }
+    }
+}
