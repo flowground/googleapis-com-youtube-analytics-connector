@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the YouTube Analytics API (version v2).
 
 Generated from: https://api.apis.guru/v2/specs/googleapis.com/youtubeAnalytics/v2/swagger.json<br/>
-Generated at: 2019-05-07T17:42:08+03:00
+Generated at: 2019-05-23T12:13:50+03:00
 
 ## API Description
 
